@@ -9,6 +9,8 @@ Given user generates token
     When user retrieves response from getJobTitles
     Then status codeis 200
     Then user verifies the number of Job Titles
+    Then user validates job titles
+    Then user compares the results btw API and SQL
 
 
 

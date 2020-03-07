@@ -2,12 +2,12 @@ package com.hrms.API.steps.practice;
 
 import static io.restassured.RestAssured.given;
 
-import java.util.Iterator;
+import java.io.File;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.junit.Assert;
 
+import com.hrms.utils.APIConstants;
 import com.hrms.utils.CommonMethods;
 
 import cucumber.api.java.en.Given;
@@ -29,6 +29,7 @@ public class UpdateEmployee {
 
 	@When("user recieves response from updateEmployee")
 	public void user_recieves_response_from_updateEmployee() {
+	
 		String empID="{ \"employee_id\": \"" + CreateEmployeeAPI.emp_id + "\",";
 	    response = request.body(empID + CommonMethods.readJson("updateEmployee.json" ))
 	    		.when().put(updateEpmloyeeURI);

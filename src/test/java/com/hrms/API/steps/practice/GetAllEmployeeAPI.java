@@ -35,9 +35,9 @@ public class GetAllEmployeeAPI {
 	public void validate_the_number_of_employees() {
 		List<String> list = response.jsonPath().getList("Employee");
 	    int numberOFEmployeefromAPI=list.size();
-		int numberOFEmployeefromSQL=Integer.parseInt(CommonMethods.readJson("empNumber.json").replaceAll( "[^\\d]", "" ));
-		Assert.assertEquals(numberOFEmployeefromSQL, numberOFEmployeefromAPI);
-		System.out.println("Number of employee in SQL--> "+ numberOFEmployeefromSQL);
+		
+		Assert.assertEquals(JDBCEmployee.employeeNumber, numberOFEmployeefromAPI);
+		System.out.println("Number of employee in SQL--> "+ JDBCEmployee.employeeNumber);
 		System.out.println("Number of employee in API--> "+ numberOFEmployeefromAPI);
 	}
 	@Then("status code isss {int}")

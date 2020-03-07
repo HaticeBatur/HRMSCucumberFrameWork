@@ -28,5 +28,5 @@ public class Constants {
 	
 	public static final String SCREENSHOTS_FILEPATH=System.getProperty("user.dir")+"/target/screenshots/";
 	
-	public static final String JSON_FILEPATH = System.getProperty("user.dir")+ "/src/test/resources/JSONFiles/";
+	
 }

@@ -10,6 +10,7 @@ Given user generates token
     Given user calls getAllEmployee API
     When user recieves response from getAllEmployee
 		Then status code isss 200
+		Then find emp number in JDBC
     Then validate the number of employees
 
 

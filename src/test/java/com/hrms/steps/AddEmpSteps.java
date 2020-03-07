@@ -10,6 +10,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class AddEmpSteps extends CommonMethods{
+	public static String employeeID ="";
 	
 	@Given("I logged into HRMS")
 	public void i_logged_into_HRMS() {
@@ -24,12 +25,13 @@ public class AddEmpSteps extends CommonMethods{
 	sendText(addEmp.firstName, fName);
 	sendText(addEmp.middleName, mName);
 	sendText(addEmp.lastName, lName);
+	employeeID = addEmp.employeeId.getAttribute("value");
 	}
 	@When("I click Save")
 	public void i_click_Save(){
 		click(addEmp.btnSave);
 	}	
-	@Then("i see Employee with {string}, {string} and {string} is displayed")
+	@Then("I see Employee with {string} , {string} and {string} is succesfully added")
 	public void i_see_Employee_with_and_is_displayed(String string, String string2, String string3) {
 		String actFirstName=pdetails.firstName.getAttribute("value");
 		String actMiddleName=pdetails.middleName.getAttribute("value");

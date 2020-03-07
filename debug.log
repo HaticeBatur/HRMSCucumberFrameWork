@@ -5009,3 +5009,6 @@
 [0130/192134.802:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
 [0130/192134.803:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Owner\AppData\Local\Temp\scoped_dir30388_1486358972\Crashpad\settings.dat: The system cannot find the file specified. (0x2)
 [0227/084509.739:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
+[0304/133300.440:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
+[0304/133341.784:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
+[0304/133428.516:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)

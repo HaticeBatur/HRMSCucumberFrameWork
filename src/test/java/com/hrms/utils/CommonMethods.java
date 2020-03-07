@@ -281,7 +281,7 @@ public class CommonMethods extends PageInitializer {
     
     static String jsonFile;
     public static String readJson(String fileName) {
-    	String jsonFilePath=Constants.JSON_FILEPATH + fileName;
+    	String jsonFilePath=APIConstants.JSON_FILEPATH + fileName;
     	try {
     		jsonFile= new String(Files.readAllBytes(Paths.get(jsonFilePath)));
     	} catch(IOException e) {
