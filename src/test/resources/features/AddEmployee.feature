@@ -15,7 +15,7 @@ Feature: Add Employee
   Scenario Outline: Add new Employee
     When I add "<FirstName>" , "<MiddleName>" and "<LastName>"
     When I click Save
-    And I see Employee with "<FirstName> " , "<MiddleName> " and "<LastName>" is succesfully added
+    And I see Employee with "<FirstName>" , "<MiddleName>" and "<LastName>" is succesfully added
 
     Examples: 
       | FirstName | MiddleName | LastName |

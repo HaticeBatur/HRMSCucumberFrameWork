@@ -7,7 +7,7 @@ Feature: Login
     And I click on login button
     Then I successfully logged in
 
-  @regression
+  #@regression
   Scenario Outline: Invalid Login
     When I enter "<UserName>" and "<Password>"
     And I click on login button
