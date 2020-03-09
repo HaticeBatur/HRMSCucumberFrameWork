@@ -5,7 +5,7 @@ Feature: Add Employee
     Given I logged into HRMS
     And I navigated to Add Employee Page
 
-  @smok
+@regressionnn
   Scenario: Add a new Employee
     When I add "Ann" , "Mr." and "Clark"
     And I click Save
