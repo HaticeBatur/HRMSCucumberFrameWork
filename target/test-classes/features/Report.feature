@@ -4,7 +4,7 @@ Feature: Title of your feature
 		Background: 
 		Given I logged into HRMS
 		And I navigated to Reports Page
-  @smok
+  @smoke
   Scenario: Search for valid report
     When I enter report name as "Candidates"
     And I click on search button
