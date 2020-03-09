@@ -49,7 +49,7 @@ Feature: Add Employee
     When I click Save
     Then I see required error message next to the first and last name
 
-  @smoke
+  @smokeee
   Scenario: AddEmployee and Login Credentials
     When I add "Tarxy.." , "Jr" and "Adria"
     And I click on create login details checkbox
