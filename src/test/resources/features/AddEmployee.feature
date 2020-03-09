@@ -9,7 +9,7 @@ Feature: Add Employee
   Scenario: Add a new Employee
     When I add "Ann" , "Mr." and "Clark"
     And I click Save
-    And I see Employee with "Anna " , "Mr. " and "Clark" is succesfully added
+    And I see Employee with "Ann" , "Mr." and "Clark" is succesfully added
 
   @regression
   Scenario Outline: Add new Employee
