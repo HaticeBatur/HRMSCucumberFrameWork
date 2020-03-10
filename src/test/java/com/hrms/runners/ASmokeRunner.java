@@ -17,6 +17,6 @@ import cucumber.api.junit.Cucumber;
 		,tags= {"@smoke"}
 		)
 
-public class SmokeRunner {
+public class ASmokeRunner {
 
 }
