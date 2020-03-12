@@ -7,7 +7,7 @@ Feature: Add Employee
 
 @smoke
   Scenario: Add a new Employee
-    When I add "Ann" , "Mr." and "Clark"
+    When I add "Annnnnn" , "Mr." and "Clark"
     And I click Save
     And I see Employee with "Ann" , "Mr." and "Clark" is succesfully added
 
@@ -39,7 +39,7 @@ Feature: Add Employee
   
   @smoke
   Scenario: Add Employee without employee id
-    When I add "Marm" , "Hose" and "Adria"
+    When I add "Marmmmm" , "Hose" and "Adria"
     And I delete employee id
     And I click Save
     Then I see employee without employee id is being added
