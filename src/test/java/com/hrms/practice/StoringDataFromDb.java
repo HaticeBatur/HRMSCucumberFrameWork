@@ -15,7 +15,7 @@ public class StoringDataFromDb {
 	
 	String dbUsername = "syntax_hrm";
 	String dbPassword = "syntaxhrm123";
-	String dbURL = "jdbc:mysql://54.167.125.15:3306/syntaxhrm_mysql";
+	String dbURL = "jdbc:mysql://166.62.36.207:3306/syntaxhrm_mysql";
 	
 //	@Test
 //	public void getAndStoreData() throws SQLException {
@@ -53,7 +53,6 @@ public class StoringDataFromDb {
 			rowMap =new LinkedHashMap<>();
 			for ( int i=1; i<rsetData.getColumnCount(); i++) {
 			rowMap.put(rsetData.getColumnName(i), rset.getObject(i).toString());
-			
 			}
 			listData.add(rowMap);
 		}

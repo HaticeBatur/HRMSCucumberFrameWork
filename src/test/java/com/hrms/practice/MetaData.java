@@ -13,12 +13,14 @@ import org.junit.Test;
 public class MetaData {
 	String dbUsername = "syntax_hrm";
 	String dbPassword = "syntaxhrm123";
-	String dbUrl = "jdbc:mysql://54.167.125.15:3306/syntaxhrm_mysql";
+	String dbUrl = "jdbc:mysql://166.62.36.207:3306/syntaxhrm_mysql";
 	
 	@Test 
 	public void getMetaData () throws SQLException {
 		Connection c = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+		
 		DatabaseMetaData dbData = c.getMetaData();
+		
 		String dbname = dbData.getDatabaseProductName();
 		String dbversion = dbData.getDatabaseProductVersion();
 		System.out.println(dbname);
@@ -27,6 +29,7 @@ public class MetaData {
 		Statement st = c.createStatement();
 		ResultSet rset = st.executeQuery("select * from hs_hr_employees where emp_number = 4353");
 		ResultSetMetaData resultData = rset.getMetaData();
+		
 		int cols = resultData.getColumnCount();
 		System.out.println(cols);
 		

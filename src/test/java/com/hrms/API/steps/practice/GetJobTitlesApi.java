@@ -10,7 +10,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Assert;
 
+import com.hrms.utils.APIConstants;
 import com.hrms.utils.CommonMethods;
+import com.hrms.utils.ReadWriteFile;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -22,20 +24,20 @@ public class GetJobTitlesApi {
 	
 	private static RequestSpecification request;
 	private Response response;
-	String jobTitlesURI= "http://54.167.125.15/syntaxapi/api/jobTitle.php";
+	String jobTitlesURI= "http://166.62.36.207/syntaxapi/api/jobTitle.php";
 	public static JSONArray jobTitleArray;
 	
 	@Given("user calls GETJobTitles API")
 	public void user_calls_GETJobTitles_API() {
 	    request = given().header("Content-Type", "Application/json")
-	    		.header("Authorization", SyntaxAPIAuthenticationSteps.Token);
+	    		.header("Authorization", ReadWriteFile.readTextFromFile(APIConstants.JSON_FILEPATH+"token.txt"));
 	}
 
 	@When("user retrieves response from getJobTitles")
 	public void user_retrieves_response_from_getJobTitles() {
 	    response = request.when().get(jobTitlesURI);
-//	    System.out.print("Job Titles Response -->");
-//	    response.prettyPrint(); 
+	    System.out.print("Job Titles Response -->");
+	    response.prettyPrint(); 
 	}
     @Then("status codeis {int}")
     public void status_code_is(int expected) {

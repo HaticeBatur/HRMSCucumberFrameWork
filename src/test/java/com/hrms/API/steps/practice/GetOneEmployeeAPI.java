@@ -2,6 +2,8 @@ package com.hrms.API.steps.practice;
 
 import static io.restassured.RestAssured.*;
 
+import java.util.Map;
+
 import org.junit.Assert;
 
 import com.hrms.utils.CommonMethods;
@@ -37,6 +39,8 @@ public class GetOneEmployeeAPI {
 	public void status_codeiis(int expected) {
 		  response.then().assertThat().statusCode(expected);
 	        Assert.assertEquals(expected, response.getStatusCode()); 
+	        Map<String, Object> map=response.as(Map.class);
+	        
 	}
 
 	@Then("employee id matches with the test POSTCreateEmployee")

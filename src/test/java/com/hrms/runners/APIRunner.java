@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 		glue= {"com.hrms.API.steps.practice"},
 		dryRun=false,
 		monochrome=true,
-		tags= "@GoRest"
+		tags= "@GETJobTitlesAPI"
 		
 		)
 

@@ -13,11 +13,12 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import static org.hamcrest.Matchers.equalTo;
 public class CreateEmployeeAPI {
     
     private static Response response;
     private static RequestSpecification request;
-    String createEmployeeURI = "http://54.167.125.15/syntaxapi/api/createEmployee.php";
+    String createEmployeeURI = "http://166.62.36.207/syntaxapi/api/createEmployee.php";
     public static Object emp_id;
     
     @Given("user calls createEmployee API")
@@ -47,8 +48,9 @@ public class CreateEmployeeAPI {
     @Then("user keeps the new employee's id")
     public void user_keeps_the_new_employee_s_id() {
         Map<String, Object> result = response.jsonPath().get("Employee[0]");
+       System.out.println("Employee Map " + result);
         emp_id =  result.get("employee_id");
-        System.out.println("Employee id is" +emp_id);
+        System.out.println("Employee id is " +emp_id);
         
         List<String> list = response.jsonPath().getList( "Employee");
         System.out.println("List of employee  is    "+list);

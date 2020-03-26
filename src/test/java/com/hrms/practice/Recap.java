@@ -16,7 +16,7 @@ public class Recap {
 
 	String dbUsername = "syntax_hrm";
 	String dbPassword = "syntaxhrm123";
-	String dbURL = "jdbc:mysql://54.167.125.15:3306/syntaxhrm_mysql";
+	String dbURL = "jdbc:mysql://166.62.36.207:3306/syntaxhrm_mysql";
 	
 	@Test
 	public void gettingConnected () throws SQLException {
@@ -40,7 +40,7 @@ public class Recap {
 		while (rset.next()) {
 			id = rset.getObject("id").toString();
 			skills = rset.getObject("name").toString();
-			System.out.println(id+ " = "+skills);
+			System.out.println(id+ " = " +skills);
 		}
 		rset.close();
 		st.close();

@@ -5,11 +5,11 @@ Feature: Add Employee
     Given I logged into HRMS
     And I navigated to Add Employee Page
 
-@smoke
+@smokeeee
   Scenario: Add a new Employee
     When I add "Annnnnn" , "Mr." and "Clark"
     And I click Save
-    And I see Employee with "Ann" , "Mr." and "Clark" is succesfully added
+    And I see Employee with "Annnnnn" , "Mr." and "Clark" is succesfully added
 
   @regression
   Scenario Outline: Add new Employee

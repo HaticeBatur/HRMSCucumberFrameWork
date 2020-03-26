@@ -12,7 +12,7 @@ import org.junit.Assert;
 public class DeleteEmployeeAPI {
 	private static RequestSpecification request;
 	private static Response response;
-	String deleteEmployeeURI = "http://54.167.125.15/syntaxapi/api/deleteEmployee.php";
+	String deleteEmployeeURI = "http://166.62.36.207/syntaxapi/api/deleteEmployee.php";
 	
 	@Given("user calls deleteEmployee API")
 	public void user_calls_deleteEmployee_API() {

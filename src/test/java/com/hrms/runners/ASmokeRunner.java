@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 				, "json:target/cucumber.json"
 				, "rerun:target/failed.txt"}
 		,monochrome=true
-		,tags= {" @smokeeeeee"}
+		,tags= {"@DBTest"}
 		)
 
 public class ASmokeRunner {

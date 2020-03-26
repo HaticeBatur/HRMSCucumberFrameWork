@@ -2,12 +2,11 @@ package com.hrms.API.steps.practice;
 
 import static io.restassured.RestAssured.given;
 
-import java.io.File;
 import java.util.Map;
 
 import org.junit.Assert;
 
-import com.hrms.utils.APIConstants;
+
 import com.hrms.utils.CommonMethods;
 
 import cucumber.api.java.en.Given;

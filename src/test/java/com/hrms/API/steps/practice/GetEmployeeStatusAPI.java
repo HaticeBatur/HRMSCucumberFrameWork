@@ -19,7 +19,7 @@ import io.restassured.specification.RequestSpecification;
 public class GetEmployeeStatusAPI {
 	private static RequestSpecification request;
 	private static Response response;
-	String getEmployeeStatusURI= "http://54.167.125.15/syntaxapi/api/employeeStatus.php";
+	String getEmployeeStatusURI= "http://166.62.36.207/syntaxapi/api/employeeStatus.php";
 	
 	@Given("user calls getEmployeeStatus API")
 	public void user_calls_getEmployeeStatus_API() {

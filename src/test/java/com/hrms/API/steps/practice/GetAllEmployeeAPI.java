@@ -17,7 +17,7 @@ import io.restassured.specification.RequestSpecification;
 public class GetAllEmployeeAPI {
 	private static RequestSpecification request;
 	private static Response response;
-	String getAllEmployeURI="http://54.167.125.15/syntaxapi/api/getAllEmployees.php";
+	String getAllEmployeURI="http://166.62.36.207/syntaxapi/api/getAllEmployees.php";
 	
 	@Given("user calls getAllEmployee API")
 	public void user_calls_getAllEmployee_API() {
