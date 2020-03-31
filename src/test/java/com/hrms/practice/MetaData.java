@@ -27,20 +27,31 @@ public class MetaData {
 		System.out.println(dbversion);
 		
 		Statement st = c.createStatement();
-		ResultSet rset = st.executeQuery("select * from hs_hr_employees where emp_number = 4353");
+		ResultSet rset = st.executeQuery("select * from hs_hr_employees where emp_number = 4347");
 		ResultSetMetaData resultData = rset.getMetaData();
 		
 		int cols = resultData.getColumnCount();
 		System.out.println(cols);
+		System.out.println("-----------RESULTSET ----------");
+		
+		while(rset.next()){
+			for(int i=1; i<=cols; i++) {
+			if(rset.getObject(resultData.getColumnName(i))==null);
+			else System.out.println(rset.getObject(resultData.getColumnName(i).toString()));
+			}
+		}
 		
 //		String colname=resultData.getColumnName(1);
 //		System.out.println("&&&&&&&&&& "+colname);
-	
+	System.out.println("-----------RESULTSET METADATA----------");
 		String colName;
 			for(int i=1; i<=cols; i++) {
 				colName = resultData.getColumnName(i);
 				System.out.println(colName);
 			}
+			rset.close();
+			st.close();
+			c.close();
 		}
 	
 	}

@@ -1,5 +1,9 @@
 package com.hrms.practice;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -9,13 +13,21 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
+
+import com.hrms.utils.Constants;
 
 public class StoringDataFromDb {
 	
 	String dbUsername = "syntax_hrm";
 	String dbPassword = "syntaxhrm123";
 	String dbURL = "jdbc:mysql://166.62.36.207:3306/syntaxhrm_mysql";
+	static Workbook book;
+	static Sheet sheet;
 	
 //	@Test
 //	public void getAndStoreData() throws SQLException {
@@ -40,7 +52,7 @@ public class StoringDataFromDb {
 //	}
 	
 	@Test
-	public void getAndStoreDataEnhanced() throws SQLException {
+	public void getAndStoreDataEnhanced() throws SQLException, InterruptedException {
 		Connection con = DriverManager.getConnection(dbURL, dbUsername, dbPassword);
 		Statement st = con.createStatement();
 		ResultSet rset = st.executeQuery("select * from ohrm_location");
@@ -62,5 +74,7 @@ public class StoringDataFromDb {
 		for(Map<String, String> map:listData) {
 			System.out.println(map);
 		}
+		
+		
 	}
 }

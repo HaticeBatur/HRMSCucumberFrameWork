@@ -17,7 +17,7 @@ public class JDBCEmployee {
 
 	String dbUsername = "syntax_hrm";
 	String dbPassword = "syntaxhrm123";
-	String dbURL = "jdbc:mysql://54.167.125.15:3306/syntaxhrm_mysql";
+	String dbURL = "jdbc:mysql://166.62.36.207:3306/syntaxhrm_mysql";
 	String query= "select emp_number, emp_firstname, emp_middle_name, emp_lastname,"
 			+ "emp_marital_status, emp_birthday  from hs_hr_employees order by emp_number";
 	public static int employeeNumber;
@@ -56,5 +56,8 @@ public class JDBCEmployee {
 		employeeNumber++;
 		}
 		System.out.println("EMPLOYEE NUMBER --> " + employeeNumber);
+		rset.close();
+		st.close();
+		conn.close();
 	}
 }

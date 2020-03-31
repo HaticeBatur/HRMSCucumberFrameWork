@@ -14,7 +14,7 @@ public class JdbcDemo {
 	String dbUsername = "syntax_hrm";
 	String dbPassword = "syntaxhrm123";
 	// jdbc:type driver:host:port/name of the database
-	String dbURL = "jdbc:mysql://54.167.125.15:3306/syntaxhrm_mysql";
+	String dbURL = "jdbc:mysql://166.62.36.207:3306/syntaxhrm_mysql";
 	
 	@Test
 	public void getDataFromDataBase() throws SQLException {

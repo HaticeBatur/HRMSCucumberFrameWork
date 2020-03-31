@@ -22,7 +22,6 @@ public class DbUtils {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
 	/**
 	 * Retrieves data and stored inside List<Map>
