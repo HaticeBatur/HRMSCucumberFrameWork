@@ -63,6 +63,7 @@ public class ExcelUtility {
 	public static String getCellData(String filePath, String sheetName, int rowIndex, int cellIndex) {
 		openExcel(filePath, sheetName);
 		return sheet.getRow(rowIndex).getCell(cellIndex).toString();
+		
 	}
 
 	/**
@@ -71,8 +72,9 @@ public class ExcelUtility {
 	 * @param filePath
 	 * @param sheetName
 	 * @return
+	 * @throws IOException 
 	 */
-	public static Object[][] excelIntoArray(String filePath, String sheetName) {
+	public static Object[][] excelIntoArray(String filePath, String sheetName) throws IOException {
 
 		openExcel(filePath, sheetName);
 
@@ -83,6 +85,7 @@ public class ExcelUtility {
 				data[i - 1][y] = getCellData(i, y);
 			}
 		}
+		wbook.close();
 		return data;
 	}
 }

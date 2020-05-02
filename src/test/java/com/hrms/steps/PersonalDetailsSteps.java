@@ -26,11 +26,12 @@ public class PersonalDetailsSteps extends CommonMethods{
 		List<Map<String, String>> modifyList=modifyEmpDetails.asMaps();
 		for(Map<String, String> map:modifyList) {
 			//click on edit
+			waitForClickability(pdetails.edit_saveBtn);
 			click(pdetails.edit_saveBtn);
 			sendText(pdetails.txtLicenNo, map.get("DriverLisence"));
 			sendText(pdetails.txtLicenExpDate, map.get("ExpirationDate"));
-			//sendText(pdetails.txtSSN, map.get("SSN"));
-			//sendText(pdetails.txtSIN, map.get("SIN"));
+			sendText(pdetails.txtSSN, map.get("SSN"));
+			sendText(pdetails.txtSIN, map.get("SIN"));
 			sendText(pdetails.DOB, map.get("DateOfBirth"));
 			pdetails.selectGender(map.get("Gender"));
 			selectDdValue(pdetails.selectNation, map.get("Nationality"));

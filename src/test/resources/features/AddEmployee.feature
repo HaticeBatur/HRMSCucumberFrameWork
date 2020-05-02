@@ -1,17 +1,16 @@
 @sprint2 @addEmployee
 Feature: Add Employee
-
   Background: 
     Given I logged into HRMS
     And I navigated to Add Employee Page
 
-@smokeeee
+@Smokeeee @Regression  @AddEmployee
   Scenario: Add a new Employee
     When I add "Annnnnn" , "Mr." and "Clark"
     And I click Save
-    And I see Employee with "Annnnnn" , "Mr." and "Clark" is succesfully added
+    And I see Employee with "Annnnnn" , "Mrs." and "Clark" is succesfully added
 
-  @regression
+@Regression   @AddEmployee
   Scenario Outline: Add new Employee
     When I add "<FirstName>" , "<MiddleName>" and "<LastName>"
     When I click Save
@@ -23,33 +22,20 @@ Feature: Add Employee
       | Velixy    | V          | XYZ      |
       | Sami      | X          | XYZ      |
 
-  @PersonalDetails
-  Scenario: Add and Modify Employee Details
-    When I enter employee details
-      | FirstName | MiddleName | LastName |
-      | AAAAAAA     | Jr.       | Maria    |
-      
-      
-      
-    And I click Save
-    Then I am able to modify Employee Details
-      | DriverLisence | ExpirationDate | SSN         | SIN      | DateOfBirth | Gender | Nationality | MaritalStatus |
-      | N385456466    | 2021-12-23     | 123-45-6745 | 34567878 | 1993-07-24  | Female   | Spanish     | Other         |
-  		| M345456400    | 2020-10-20     | 123-45-6756 | 45667745 | 1990-04-20  | Female   | Mexican     | Single         |
   
-  @smoke
+ @Smoke @Regression
   Scenario: Add Employee without employee id
     When I add "Marmmmm" , "Hose" and "Adria"
     And I delete employee id
     And I click Save
     Then I see employee without employee id is being added
 
-  @smoke
+  @Smoke   @Regression
   Scenario: Add Employee negative scenario
     When I click Save
     Then I see required error message next to the first and last name
 
-  @smokeee
+  @Smokeee  @Regressionn
   Scenario: AddEmployee and Login Credentials
     When I add "Tarxy.." , "Jr" and "Adria"
     And I click on create login details checkbox
@@ -57,11 +43,21 @@ Feature: Add Employee
     When I click Save
     And I see Employee with "Tarxy.. " , "Jr " and "Adria" is succesfully added
     
-  @DBTest
+  @DBTest   @Regression
     Scenario: Add Employee and validate database
     	When I add "Halide" , "Edip" and "Adivar"
     	And I click Save
     	And I see Employee with "Halide" , "Edip" and "Adivar" is succesfully added
     	Then I collect employee from database
     	And I verify employee data is matching for employee "Halide Edip Adivar"
+    	
+   @DBTestSingleEmpl   @Regression
+    Scenario: Add Employee and validate database
+    	When I add "Ayse" , "Fatma" and "Hayriye"
+    	And I click Save
+    	Then I collect the single employee from database
+    	And I verify employee data is matching for single employee
+    	|emp_firstname| emp_middle_name| emp_lastname|
+    	|Ayse|Fatma|Hayriye|
+    	
     	

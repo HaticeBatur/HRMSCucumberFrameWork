@@ -49,6 +49,9 @@ public class StoringDataFromDb {
 //		for(Map<String, String> map:listData) {
 //			System.out.println(map);
 //		}
+//	rset.close();
+//	st.close();
+//	connection.close();
 //	}
 	
 	@Test
@@ -75,6 +78,8 @@ public class StoringDataFromDb {
 			System.out.println(map);
 		}
 		
-		
+		rset.close();
+		st.close();
+		con.close();
 	}
 }

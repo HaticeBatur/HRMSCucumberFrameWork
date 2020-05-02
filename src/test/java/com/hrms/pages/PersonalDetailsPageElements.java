@@ -32,16 +32,16 @@ public class PersonalDetailsPageElements {
 	@FindBy(css="input#btnSave")
 	public WebElement edit_saveBtn;
 	
-	@FindBy(css="#personal_txtLicenNo")
+	@FindBy(id="personal_txtLicenNo")
 	public WebElement txtLicenNo;
 	
-	@FindBy(css="#personal_txtNICNo")
+	@FindBy(id="personal_txtNICNo")
 	public WebElement txtSSN;
 	
 	@FindBy(xpath="//input[@id='personal_txtLicExpDate']")
 	public WebElement txtLicenExpDate;
 	
-	@FindBy(css="input[id*='txtSINNo']")
+	@FindBy(id="personal_txtSINNo")
 	public WebElement txtSIN;
 	
 	@FindBy(css="input[id*='optGender']")

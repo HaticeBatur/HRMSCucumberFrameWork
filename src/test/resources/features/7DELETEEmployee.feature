@@ -3,7 +3,7 @@ Feature: Validating Syntax HRMS API's DELETE Employee
 	Background:
 		Given user generates token
 
-@APITESTiiii
+@APITEST  
   Scenario: This test will delete one employee
     Given user calls deleteEmployee API
     When user receives response for deleteEmployee

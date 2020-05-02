@@ -25,20 +25,22 @@ public class GoRestSteps {
 	@When("I provide a request data")
 	public void i_provide_a_request_data() {
 		 request = given().header("Content-Type", "application/json")
-         .header("Authorization", "Bearer 059MHCzH0kLQS_wTwCMeniTFjKrLvtSTE7fM");
+         .header("Authorization", "Bearer NIrS4WGVFwMlIJdrgPydKRoIqV_3aVao0ATy");
 		 //request.log().all();
 	}
 
 	@When("I make a call to albums API")
 	public void i_make_a_call_to_albums_API() {
-		int albumId = 4;
-	    response = request.when().get("https://gorest.co.in/public-api/albums/" + albumId);
+		int albumId = 3;
+	    response = request.when().get("https://gorest.co.in/public-api/users/" + albumId);
+	    response.prettyPrint();
 	}
 
 	@Then("I validate that {int} is the status code")
 	public void i_validate_that_is_the_status_code(int expectedStatusCode) {
 		//1st way 
 		response.then().assertThat().statusCode(expectedStatusCode);
+		response.then().statusCode(expectedStatusCode);
 	   //String responseBody = response.prettyPrint();
 	   //2nd way
 		Assert.assertEquals(response.getStatusCode(), expectedStatusCode);
@@ -47,18 +49,20 @@ public class GoRestSteps {
 	@Then("I validate response body")
 	public void i_validate_response_body() {
 	   //1st way
-		response.then().body("_meta.rateLimit.limit", Matchers.equalTo(60));
+		
+		response.then().body("_meta.rateLimit.limit", Matchers.equalTo(30));
 		response.then().body("_meta.message", Matchers.equalTo("OK. Everything worked as expected."));
-		response.then().body("result._links.self.href", Matchers.equalTo("https://gorest.co.in/public-api/albums/4"));
+		response.then().body("result._links.self.href", Matchers.equalTo("https://gorest.co.in/public-api/albums/3"));
 		//2nd way
 		JsonPath jsonPath = response.jsonPath();
 		String result = jsonPath.prettify();
 		System.out.println(result);
 		String expectedTitle = jsonPath.getString("result.title");
-		String actualTitle = "Quos culpa est nemo aspernatur.";
+		String actualTitle = "In facilis aut aperiam quo qui quia.";
 		Assert.assertEquals(expectedTitle, actualTitle);
 		String userID = jsonPath.get("result.user_id");
-		
+		Map<String, Object> albumMap = response.as(Map.class);
+		System.out.println(albumMap);
 //		JsonPath jsonPath = response.jsonPath();
 //		String result = jsonPath.prettify();
 //		List <Object> albums = jsonPath.get("result");

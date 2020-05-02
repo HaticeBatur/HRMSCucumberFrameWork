@@ -12,6 +12,7 @@ import cucumber.api.java.en.When;
 public class AddEmpSteps extends CommonMethods{
 	public static String employeeID ="";
 	
+	
 	@Given("I logged into HRMS")
 	public void i_logged_into_HRMS() {
 	   login.login(ConfigsReader.getProperty("username"), ConfigsReader.getProperty("password"));
@@ -36,8 +37,6 @@ public class AddEmpSteps extends CommonMethods{
 		String actFirstName=pdetails.firstName.getAttribute("value");
 		String actMiddleName=pdetails.middleName.getAttribute("value");
 		String actLastName=pdetails.lastName.getAttribute("value");
-		System.out.println(actFirstName+actMiddleName+actLastName);
-		System.out.println(string+string2+string3);
 		Assert.assertTrue("First name MISMATCH", string.equals(actFirstName));		
 		Assert.assertTrue("Middle name MISMATCH", string2.equals(actMiddleName));		
 		Assert.assertTrue("Last name MISMATCH", string3.equals(actLastName));

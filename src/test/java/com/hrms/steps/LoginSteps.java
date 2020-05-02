@@ -12,6 +12,7 @@ public class LoginSteps extends CommonMethods{
 	public void i_enter_valid_username_and_valid_password() {
 		sendText(login.username, "Admin");
 		sendText(login.password, "Hum@nhrm123");
+		
 	}
 
 	@When("I click on login button")
@@ -21,7 +22,11 @@ public class LoginSteps extends CommonMethods{
 
 	@Then("I successfully logged in")
 	public void i_successfully_logged_in() {
-		Assert.assertTrue(true);
+		try{
+			Assert.assertTrue(false);
+		}catch(Throwable e) {
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -35,6 +40,7 @@ public class LoginSteps extends CommonMethods{
 	public void i_see(String errorMsg) {
 		waitForVisibility(login.errMessage);
 	    Assert.assertEquals("Error messages are NOT matching", errorMsg, login.errMessage.getText());
+
 	}
 
 }

@@ -13,6 +13,7 @@
 
 	<dependencies>
 
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
@@ -95,7 +96,8 @@
 				<version>3.0.0-M4</version>
 				<configuration>
 					<includes>
-				<!--  	<include>**/*ASmokeRunner.java</include>  -->
+				<!--  	<include>**/*SmokeRunner.java</include>
+				 	<include>**/*FailedRunner.java</include>   -->
 					</includes>
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>

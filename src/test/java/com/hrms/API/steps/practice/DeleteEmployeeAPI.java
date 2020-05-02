@@ -16,7 +16,7 @@ public class DeleteEmployeeAPI {
 	
 	@Given("user calls deleteEmployee API")
 	public void user_calls_deleteEmployee_API() {
-	    request = given().param("employee_id", CreateEmployeeAPI.emp_id).header("Content-Type", "Application/json")
+	    request = given().param("employee_id", POSTCreateEmployeeAPI.employeeID).header("Content-Type", "Application/json")
 	    		.header("Authorization", SyntaxAPIAuthenticationSteps.Token);
 	}
 

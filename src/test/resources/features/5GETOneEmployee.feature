@@ -1,10 +1,11 @@
 @API
-Feature: Validating Syntax HRMS API`s getOneEmployee
+Feature: Validating Syntax /getOneEmployee.php HRMS API
  
  Background:
 	Given user generates token
 
 @APITEST
+@GetOneEmp
   Scenario: This test will validate the employee created by POSTCreateEmployee
     Given user calls getOneEmployee API
     When user receives response from getOneEmployee

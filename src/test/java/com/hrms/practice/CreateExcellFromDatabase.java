@@ -1,6 +1,7 @@
 package com.hrms.practice;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -27,23 +28,30 @@ public class CreateExcellFromDatabase extends DbUtils {
 		static Sheet sheet;
 
 		@Test
-		public void getAndStoreDataEnhanced() throws SQLException  {
+		public void getAndStoreDataEnhanced() throws SQLException {
 			ConfigsReader.readProperties(Constants.CREDENTIALS_FILEPATH);
 			System.out.println(ConfigsReader.getProperty("dbUrl")+
 					ConfigsReader.getProperty("dbUsername")+ ConfigsReader.getProperty("dbPassword"));
+		
 			conn = DriverManager.getConnection(ConfigsReader.getProperty("dbUrl"), 
 					ConfigsReader.getProperty("dbUsername"), ConfigsReader.getProperty("dbPassword"));
 			st=conn.createStatement();
 			ResultSet rset = st.executeQuery("select * from hs_hr_employees order by emp_number limit 100");
 			ResultSetMetaData rsetData = rset.getMetaData();
 		
-			try {
-				FileInputStream fis= new FileInputStream(Constants.XL_DATA_FILEPATH);
+			
+				try{
+					FileInputStream fis= new FileInputStream(Constants.XL_DATA_FILEPATH);
 				 book=new XSSFWorkbook(fis);
 				 sheet=book.getSheet("Sheet1");
-			}catch(IOException e) {
-				e.printStackTrace();
-			}
+				}catch(FileNotFoundException e) {
+					e.printStackTrace();
+				}catch(IOException e) {
+					e.printStackTrace();
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			
 			Row row=sheet.createRow(0);
 			for(int i=1; i<=rsetData.getColumnCount();i++) {
 				row.createCell(i).setCellValue(rsetData.getColumnName(i));
@@ -68,6 +76,9 @@ public class CreateExcellFromDatabase extends DbUtils {
 				fos.close();
 			}catch(IOException e) {
 				e.printStackTrace();
-			}	
+			}
+			rset.close();
+			st.close();
+			conn.close();
 		}
 	}

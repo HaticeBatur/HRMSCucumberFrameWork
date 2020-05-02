@@ -1,7 +1,7 @@
 @API
 Feature: Validating Syntax HRMS API`s Job Title
 	Background:
-#Given user generates token
+Given user generates token
 
   @GETJobTitlesAPI
   Scenario: This test will retrieve Job Title

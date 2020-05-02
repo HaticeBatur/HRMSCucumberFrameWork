@@ -1,5 +1,6 @@
 package com.hrms.pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,6 +12,7 @@ public class LoginPageElements extends CommonMethods{
 	
 	@FindBy(xpath = "//div[@id = 'divLogo']//img")
 	public WebElement logo;
+
 	
 	@FindBy(id = "logInPanelHeading")
 	public WebElement loginLabel;

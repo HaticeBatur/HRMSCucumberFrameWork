@@ -18,7 +18,7 @@ import io.restassured.specification.RequestSpecification;
 public class UpdateEmployee {
 	private static RequestSpecification request;
 	private static Response response;
-	String updateEpmloyeeURI= "http://54.167.125.15/syntaxapi/api/updateEmployee.php";
+	String updateEpmloyeeURI= "http://166.62.36.207/syntaxapi/api/updateEmployee.php";
 	
 	@Given("user calls updateEmployee API")
 	public void user_calls_updateEmployee_API() {
@@ -29,7 +29,7 @@ public class UpdateEmployee {
 	@When("user recieves response from updateEmployee")
 	public void user_recieves_response_from_updateEmployee() {
 	
-		String empID="{ \"employee_id\": \"" + CreateEmployeeAPI.emp_id + "\",";
+		String empID="{ \"employee_id\": \"" + POSTCreateEmployeeAPI.employeeID + "\",";
 	    response = request.body(empID + CommonMethods.readJson("updateEmployee.json" ))
 	    		.when().put(updateEpmloyeeURI);
 	    System.out.print("Update Employee Response-->");
@@ -54,6 +54,6 @@ public class UpdateEmployee {
 	    Map <String, String> map = response.jsonPath().get("employee[0]");
 	    Object updatedEmpID = map.get("employee_id");
 	    System.out.println("Updated employee Id is : " +updatedEmpID);
-	    Assert.assertEquals(CreateEmployeeAPI.emp_id, updatedEmpID);
+	    Assert.assertEquals(POSTCreateEmployeeAPI.employeeID, updatedEmpID);
 	}
 }

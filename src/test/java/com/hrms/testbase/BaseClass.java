@@ -32,13 +32,8 @@ public class BaseClass {
 		driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_LOAD_TIME, TimeUnit.SECONDS);
 		// driver.manage().window().maximize();
 
-		driver.get(ConfigsReader.getProperty("url"));
-	
-		
+		driver.get(ConfigsReader.getProperty("url"));	
 	}
-	
-	
-
 	public static void tearDown() {
 		if (driver != null) {
 			driver.quit();
