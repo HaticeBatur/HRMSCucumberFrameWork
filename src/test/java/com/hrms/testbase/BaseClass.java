@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.hrms.utils.ConfigsReader;
@@ -18,6 +19,7 @@ public class BaseClass {
 		switch (ConfigsReader.getProperty("browser").toLowerCase()) {
 
 		case "chrome":
+			System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 			System.setProperty("webdriver.chrome.driver", Constants.CHROME_DRIVER_PATH);
 			driver = new ChromeDriver();
 			break;

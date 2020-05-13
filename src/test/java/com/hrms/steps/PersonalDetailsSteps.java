@@ -11,14 +11,13 @@ import io.cucumber.datatable.DataTable;
 
 public class PersonalDetailsSteps extends CommonMethods{
 	
-	@When("I enter employee details")
-	public void i_enter_employee_details(DataTable empDetails) {
-	    List<Map<String, String>> empDetailList=empDetails.asMaps();
-	    for(Map<String, String> map:empDetailList) {
-	    	sendText(addEmp.firstName, map.get("FirstName"));
-	    	sendText(addEmp.middleName, map.get("MiddleName"));
-	    	sendText(addEmp.lastName, map.get("LastName"));
-	    }
+	@When("I enter employee details as {string}, {string}, {string}")
+	public void i_enter_employee_details(String fName, String mName, String lName) {
+	    
+	    	sendText(addEmp.firstName, fName);
+	    	sendText(addEmp.middleName, mName);
+	    	sendText(addEmp.lastName, lName);
+	    
 	}
 
 	@Then("I am able to modify Employee Details")
